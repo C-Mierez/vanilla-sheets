@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -11,4 +17,40 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+thead th,
+tbody tr td:first-child {
+    @apply text-center px-2 border border-neutral-900;
+}
+
+tbody tr td:first-child,
+tbody tr td {
+    @apply border border-neutral-800;
+}
+
+tbody tr td {
+    @apply bg-neutral-900;
+}
+
+th,
+td {
+    @apply align-middle  relative;
+}
+
+tbody input {
+    @apply absolute inset-0 border-none bg-transparent opacity-0 w-full pointer-events-none rounded-sm;
+
+    &:focus {
+        @apply outline-neutral-400 outline-1 opacity-100 bg-neutral-800 pointer-events-auto;
+    }
+}
+
+tbody span {
+    @apply cursor-pointer min-h-8 min-w-24;
+}
+
+tbody span,
+tbody input {
+    @apply align-middle inline-flex items-center justify-center;
 }
